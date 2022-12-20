@@ -28,73 +28,76 @@ class _AddGroceryItemViewState extends State<AddGroceryItemView> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Material(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: TextFormField(
-                controller: itemController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Item',
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please do not leave the item field empty.';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: TextFormField(
-                controller: countController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Count (Should be an integer)',
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
-                ),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please do not leave the count field empty.';
-                  }
-                  final parsedValue = int.tryParse(value);
-                  if (parsedValue == null) {
-                    return 'The value you entered is not an integer number.';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState?.validate() ?? false) {
-                    // TODO(9): Add GraphQL API
-                    widget.onItemAdded(
-                      TemporaryGroceryItem(
-                        int.parse(countController.text),
-                        itemController.text,
-                        false,
-                      ),
-                    );
-                    if (mounted) {
-                      Navigator.of(context).pop();
+    return SafeArea(
+      bottom: true,
+      child: Form(
+        key: _formKey,
+        child: Material(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: TextFormField(
+                  controller: itemController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Item',
+                    floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please do not leave the item field empty.';
                     }
-                  }
-                },
-                child: const Text('Add Item'),
+                    return null;
+                  },
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: TextFormField(
+                  controller: countController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Count (Should be an integer)',
+                    floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  ),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please do not leave the count field empty.';
+                    }
+                    final parsedValue = int.tryParse(value);
+                    if (parsedValue == null) {
+                      return 'The value you entered is not an integer number.';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (_formKey.currentState?.validate() ?? false) {
+                      // TODO(9): Add GraphQL API
+                      widget.onItemAdded(
+                        TemporaryGroceryItem(
+                          int.parse(countController.text),
+                          itemController.text,
+                          false,
+                        ),
+                      );
+                      if (mounted) {
+                        Navigator.of(context).pop();
+                      }
+                    }
+                  },
+                  child: const Text('Add Item'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
