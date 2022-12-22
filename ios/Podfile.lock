@@ -1,4 +1,21 @@
 PODS:
+  - Amplify (1.28.3):
+    - Amplify/Default (= 1.28.3)
+  - Amplify/Default (1.28.3)
+  - amplify_auth_cognito_ios (0.0.1):
+    - Amplify (= 1.28.3)
+    - amplify_flutter_ios
+    - Flutter
+  - amplify_flutter_ios (0.0.1):
+    - Amplify (= 1.28.3)
+    - AWSPluginsCore (= 1.28.3)
+    - Flutter
+  - amplify_secure_storage (0.0.1):
+    - Flutter
+  - AWSCore (2.28.5)
+  - AWSPluginsCore (1.28.3):
+    - Amplify (= 1.28.3)
+    - AWSCore (~> 2.28.0)
   - DKImagePickerController/Core (4.3.4):
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
@@ -34,36 +51,60 @@ PODS:
     - DKImagePickerController/PhotoGallery
     - Flutter
   - Flutter (1.0.0)
+  - path_provider_ios (0.0.1):
+    - Flutter
   - SDWebImage (5.14.2):
     - SDWebImage/Core (= 5.14.2)
   - SDWebImage/Core (5.14.2)
   - SwiftyGif (5.4.3)
 
 DEPENDENCIES:
+  - amplify_auth_cognito_ios (from `.symlinks/plugins/amplify_auth_cognito_ios/ios`)
+  - amplify_flutter_ios (from `.symlinks/plugins/amplify_flutter_ios/ios`)
+  - amplify_secure_storage (from `.symlinks/plugins/amplify_secure_storage/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
 
 SPEC REPOS:
   trunk:
+    - Amplify
+    - AWSCore
+    - AWSPluginsCore
     - DKImagePickerController
     - DKPhotoGallery
     - SDWebImage
     - SwiftyGif
 
 EXTERNAL SOURCES:
+  amplify_auth_cognito_ios:
+    :path: ".symlinks/plugins/amplify_auth_cognito_ios/ios"
+  amplify_flutter_ios:
+    :path: ".symlinks/plugins/amplify_flutter_ios/ios"
+  amplify_secure_storage:
+    :path: ".symlinks/plugins/amplify_secure_storage/ios"
   file_picker:
     :path: ".symlinks/plugins/file_picker/ios"
   Flutter:
     :path: Flutter
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
 
 SPEC CHECKSUMS:
+  Amplify: e89b493fc2fe840ac044bd4ddf71ad9828f8c364
+  amplify_auth_cognito_ios: 5ed0815d1d09fd36ab989a35ce5af965b504fe3b
+  amplify_flutter_ios: 91f8932c449fa93e09638035ffc955ee216eaca9
+  amplify_secure_storage: 501cbdac671a050090d48dfcc002d5637d3f4a55
+  AWSCore: 4bad3f0eb17393b4926a9491e32b835991c56382
+  AWSPluginsCore: 93f813579479fa4c5bfff58817df89e0e10f9f3b
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
   file_picker: 817ab1d8cd2da9d2da412a417162deee3500fc95
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
   SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
 
-PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
+PODFILE CHECKSUM: 737df8fe54880b1cb983147972a0a25370d0927c
 
 COCOAPODS: 1.11.3

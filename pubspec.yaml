@@ -14,8 +14,12 @@ dependencies:
   file_picker: ^5.2.2
   # Flutter relies on the version 1.16.0 for collection
   collection: ^1.16.0
-  # TODO(1): Initialize Amplify and Add Authentication
+  # DONE(1): Initialize Amplify and Add Authentication
+  amplify_flutter: ^1.0.0-next.1
+  amplify_auth_cognito: ^1.0.0-next.1
+  amplify_authenticator: ^1.0.0-next.1
   # TODO(5): Add GraphQL API
+  amplify_api: ^1.0.0-next.1
   # TODO(10): Add Storage
 dev_dependencies:
   flutter_test:

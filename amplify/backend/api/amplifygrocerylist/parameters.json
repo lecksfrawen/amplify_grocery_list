@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "amplifygrocerylist",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authamplifygrocerylistc1b9ab38",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

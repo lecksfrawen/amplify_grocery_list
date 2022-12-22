@@ -4,6 +4,7 @@ import 'package:amplify_grocery_list/grocery_list/previous_groceries_page.dart';
 import 'package:amplify_grocery_list/models/temporary_grocery_item.dart';
 import 'package:amplify_grocery_list/utils/helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:amplify_flutter/amplify_flutter.dart';
 
 class CurrentGroceryListPage extends StatefulWidget {
   const CurrentGroceryListPage({Key? key}) : super(key: key);
@@ -44,6 +45,15 @@ class _CurrentGroceryListPageState extends State<CurrentGroceryListPage> {
               icon: const Icon(Icons.history),
             ),
             // TODO(4): Initialize Amplify and Add Authentication
+            // Import the amplify_flutter to reach Amplify Auth
+            // import 'package:amplify_flutter/amplify_flutter.dart';
+
+            IconButton(
+              onPressed: () {
+                Amplify.Auth.signOut();
+              },
+              icon: const Icon(Icons.exit_to_app),
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
